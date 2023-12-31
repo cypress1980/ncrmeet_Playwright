@@ -29,6 +29,6 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v3
       with:
-        name: all-blob-reports
-        path: blob-report
+        name: playwright-report
+        path: playwright-report
         retention-days: 1
