@@ -32,6 +32,8 @@ jobs:
         name: playwright-report
         path: playwright-report
         retention-days: 1
+  jobs:
+...
   merge-reports:
     # Merge reports after playwright-tests, even if some shards have failed
     if: always()
@@ -53,7 +55,7 @@ jobs:
         path: playwright-report
 
     - name: Merge into HTML Report
-      run: npx playwright merge-reports --reporter html /playwright-report
+      run: npx playwright merge-reports --reporter html ./playwright-report 
 
     - name: Upload HTML report
       uses: actions/upload-artifact@v3
