@@ -32,6 +32,20 @@ jobs:
         name: playwright-report
         path: playwright-report
         retention-days: 1
+  merge-reports:
+    # Merge reports after playwright-tests, even if some shards have failed
+    if: always()
+    needs: [playwright-tests]
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: Install dependencies
+      run: npm ci
+
     - name: Download blob reports from GitHub Actions Artifacts
       uses: actions/download-artifact@v3
       with:
