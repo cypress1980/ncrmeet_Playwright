@@ -34,11 +34,7 @@ jobs:
         retention-days: 1
   merge-reports:
     # Merge reports after playwright-tests, even if some shards have failed
-    - name: Download blob reports from GitHub Actions Artifacts
-      uses: actions/download-artifact@v3
-      with:
-        name: all-blob-reports
-        path: all-blob-reports
+
 
     - name: Merge into HTML Report
       run: npx playwright merge-reports --reporter html ./all-blob-reports 
