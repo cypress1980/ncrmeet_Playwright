@@ -32,13 +32,10 @@ jobs:
         name: all-blob-reports
         path: blob-report
         retention-days: 1
-  merge-reports:
+
     # Merge reports after playwright-tests, even if some shards have failed
-
-
     - name: Merge into HTML Report
       run: npx playwright merge-reports --reporter html ./all-blob-reports 
-
     - name: Upload HTML report
       uses: actions/upload-artifact@v3
       with:
