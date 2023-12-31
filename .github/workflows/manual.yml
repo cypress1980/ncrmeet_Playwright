@@ -32,3 +32,18 @@ jobs:
         name: playwright-report
         path: playwright-report
         retention-days: 1
+        - name: Download blob reports from GitHub Actions Artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: playwright-report
+        path: playwright-report
+
+    - name: Merge into HTML Report
+      run: npx playwright merge-reports --reporter html ./playwright-report
+
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v3
+      with:
+        name: html-report--attempt-${{ github.run_attempt }}
+        path: playwright-report
+        retention-days: 14
