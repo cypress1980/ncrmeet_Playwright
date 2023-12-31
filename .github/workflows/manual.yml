@@ -30,7 +30,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: all-blob-reports
-        path: blob-report
+        path: all-blob-reports
         retention-days: 1
 
     # Merge reports after playwright-tests, even if some shards have failed
