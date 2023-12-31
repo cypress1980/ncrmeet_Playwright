@@ -32,7 +32,7 @@ jobs:
         name: playwright-report
         path: playwright-report
         retention-days: 1
-        - name: Download blob reports from GitHub Actions Artifacts
+    - name: Download blob reports from GitHub Actions Artifacts
       uses: actions/download-artifact@v3
       with:
         name: playwright-report
