@@ -35,7 +35,7 @@ jobs:
 
     # Merge reports after playwright-tests, even if some shards have failed
     - name: Merge into HTML Report
-      run: npx playwright merge-reports --reporter html ./all-blob-reports 
+      run: npx playwright merge-reports --reporter html /all-blob-reports 
     - name: Upload HTML report
       uses: actions/upload-artifact@v3
       with:
