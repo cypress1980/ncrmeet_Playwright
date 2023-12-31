@@ -53,7 +53,7 @@ jobs:
         path: playwright-report
 
     - name: Merge into HTML Report
-      run: npx playwright merge-reports --reporter html ./playwright-report
+      run: npx playwright merge-reports --reporter html /playwright-report
 
     - name: Upload HTML report
       uses: actions/upload-artifact@v3
