@@ -34,7 +34,7 @@ jobs:
         retention-days: 1
 
   merge-reports:
-    # Merge reports after playwright-tests, even if some shards have failed
+    # Merge the reports and Generate the Final report
     if: always()
     needs: [playwright-tests]
 
