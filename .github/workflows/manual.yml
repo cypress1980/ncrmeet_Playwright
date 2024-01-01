@@ -30,7 +30,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: blob-report
-        path: blob-report/
+        path: blob-report
         retention-days: 1
 
   merge-reports:
